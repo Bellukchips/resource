@@ -5,7 +5,7 @@ import 'package:resource/resource/texts/h1_atm.dart';
 import 'package:resource/shared/shared.dart';
 import 'package:resource/shared/theme.dart';
 
-class PrimaryAppBar extends StatelessWidget {
+class PrimaryAppBar extends StatelessWidget with PreferredSizeWidget{
   final String? title;
   final Widget? leading;
   final bool? withLeading;
@@ -15,7 +15,7 @@ class PrimaryAppBar extends StatelessWidget {
       this.leading,
       this.withLeading = false,
       this.withBackLeading = false}) : preferredSize = const Size.fromHeight(kToolbarHeight);
-  final Size preferredSize;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -92,4 +92,7 @@ class PrimaryAppBar extends StatelessWidget {
       ),
     );
   }
+
+@override
+    final Size preferredSize;
 }
