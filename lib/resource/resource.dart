@@ -6,3 +6,5 @@ export 'inputText/input_texts.dart';
 export 'loading/loadings.dart';
 export 'texts/texts.dart';
 export 'dots/dots.dart';
+export 'clipper/clipper.dart';
+export 'dropdown/dropdown.dart';
