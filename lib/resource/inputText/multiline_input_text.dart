@@ -14,7 +14,7 @@ class MultilineInputText extends StatelessWidget {
       this.errorMessage,
       this.onSaved,
       this.cursorColor = Colors.grey,
-      this.keyboardType = TextInputType.multiline})
+      this.keyboardType = TextInputType.multiline, this.colorLabelAndHint, this.labelText})
       : super(key: key);
   final bool? autofocus;
   final Color? fillColor;
@@ -28,7 +28,8 @@ class MultilineInputText extends StatelessWidget {
   final Function(String?)? onSaved;
   final Color? cursorColor;
   final TextInputType? keyboardType;
-
+  final Color? colorLabelAndHint;
+  final String? labelText;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -46,8 +47,10 @@ class MultilineInputText extends StatelessWidget {
           fillColor: fillColor,
           filled: true,
           focusedBorder: focusedBorder,
+          labelStyle: TextStyle(color: colorLabelAndHint),
+          labelText: labelText,
           hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.grey),
+          hintStyle:  TextStyle(color: colorLabelAndHint),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(

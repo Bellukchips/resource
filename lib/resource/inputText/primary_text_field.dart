@@ -12,7 +12,7 @@ class PrimaryTextField extends StatelessWidget {
       this.controller,
       this.errorMessage,
       this.onSaved,
-      this.keyboardType = TextInputType.text, this.cursorColor = Colors.grey})
+      this.keyboardType = TextInputType.text, this.cursorColor = Colors.grey, this.labelText, this.colorLabelAndHint})
       : super(key: key);
   final bool? autofocus;
   final Color? fillColor;
@@ -25,7 +25,8 @@ class PrimaryTextField extends StatelessWidget {
   final Function(String?)? onSaved;
   final TextInputType? keyboardType;
   final Color? cursorColor;
-  
+  final String? labelText;
+  final Color? colorLabelAndHint;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -41,9 +42,11 @@ class PrimaryTextField extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: fillColor,
           filled: true,
+          labelStyle: TextStyle(color: colorLabelAndHint),
+          labelText: labelText,
           focusedBorder: focusedBorder,
           hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.grey),
+          hintStyle:  TextStyle(color: colorLabelAndHint),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(

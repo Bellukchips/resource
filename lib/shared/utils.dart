@@ -5,8 +5,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:html_unescape/html_unescape.dart';
 import 'package:intl/intl.dart';
-class Utils{
-   static void showBottomSheet(BuildContext context, {Widget? child}) {
+
+class Utils {
+  static void showBottomSheet(BuildContext context, {Widget? child}) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
@@ -26,14 +27,11 @@ class Utils{
     );
   }
 
-  static SnackBar showSnackbarText({
-    String? text,
-    Color? color,
-    TextStyle? style
-  }) {
+  static SnackBar showSnackbarText(
+      {String? text, Color? color, TextStyle? style}) {
     return SnackBar(
       backgroundColor: color,
-      duration:const Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       content: Text(
         text!,
         style: style,
@@ -42,7 +40,7 @@ class Utils{
   }
 
   static int getNumberOfTextLines(String text) {
-    TextSpan span =  TextSpan(text: text);
+    TextSpan span = TextSpan(text: text);
 
     TextPainter textPainter = TextPainter(
       text: span,
@@ -50,7 +48,8 @@ class Utils{
     List<LineMetrics> lines = textPainter.computeLineMetrics();
     return lines.length;
   }
-   static String removeAllHtmlTags(String htmlText) {
+
+  static String removeAllHtmlTags(String htmlText) {
     RegExp exp = RegExp(r"<[^>]*>", multiLine: true, caseSensitive: true);
 
     return HtmlUnescape().convert(htmlText.replaceAll(exp, ''));
@@ -104,6 +103,4 @@ extension StringExtension on String {
   String capitalize() {
     return "${this[0].toUpperCase()}${this.substring(1)}";
   }
-
-
 }

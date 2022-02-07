@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:resource/resource/texts/h1_atm.dart';
 import 'package:resource/shared/shared.dart';
-import 'package:resource/shared/theme.dart';
 
 class PrimaryAppBar extends StatelessWidget with PreferredSizeWidget{
   final String? title;
