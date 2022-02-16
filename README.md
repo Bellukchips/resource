@@ -5,8 +5,10 @@ TODO: Resource widget for flutter.
  <ul>
     <li>App bar</li>
     <li>button</li>
+    <li>clipper</li>
     <li>dividers</li>
     <li>dots</li>
+    <li>dropdown</li>
     <li>images</li>
     <li>input text</li>
     <li>loading</li>
