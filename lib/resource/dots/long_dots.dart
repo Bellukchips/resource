@@ -8,8 +8,15 @@ class LongDots extends StatelessWidget {
   final double widthOnChange;
   final Duration animatedDuration;
 
-
-  const LongDots({Key? key,required this.animatedDuration, this.index, this.currentColor, this.secondColor, this.currentPage,required this.widthOnChange}) : super(key: key);
+  const LongDots(
+      {Key? key,
+      required this.animatedDuration,
+      this.index,
+      this.currentColor,
+      this.secondColor,
+      this.currentPage,
+      required this.widthOnChange})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -18,8 +25,8 @@ class LongDots extends StatelessWidget {
       height: 10,
       width: currentPage == index ? widthOnChange : 10,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: currentPage == index ? currentColor :secondColor),
+          borderRadius: BorderRadius.circular(20),
+          color: currentPage == index ? currentColor : secondColor),
     );
   }
 }
