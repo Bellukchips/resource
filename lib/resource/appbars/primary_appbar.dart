@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:resource/resource/texts/h1_atm.dart';
 import 'package:resource/shared/shared.dart';
 
-class PrimaryAppBar extends StatelessWidget with PreferredSizeWidget{
+class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String? title;
   final Widget? leading;
   final bool? withLeading;
